@@ -11,7 +11,7 @@ const displayPhones = phones => {
     // display 10 phones only
     phones = phones.slice(0, 10)
 
-    // dispaly no phones found
+    // display no phones found
     const noPhone = document.getElementById('no-found-message')
     if (phones.length === 0) {
         noPhone.classList.remove('d-none')
@@ -25,7 +25,7 @@ const displayPhones = phones => {
         phoneDiv.classList.add('col')
         phoneDiv.innerHTML = `
         <div class="card p-4">
-            <img src="${phone.image}" class="card-img-top" alt="...">
+            <img src="${phone.image}" class="card-img-top" alt="">
             <div class="card-body">
                 <h5 class="card-title">${phone.phone_name}</h5>
                 <p class="card-text">This is a longer card with supporting text below as a natural
@@ -35,10 +35,11 @@ const displayPhones = phones => {
         `
         phoneContainer.appendChild(phoneDiv)
         // stop spinner or loader
-
+        toggleSpinner(false);
     })
 }
 
+// handle search button click
 document.getElementById('btn-search').addEventListener('click', function(){
     // start loader
     toggleSpinner(true);
@@ -53,4 +54,7 @@ const toggleSpinner = isLoading => {
     if (isLoading) {
         loaderSection.classList.remove('d-none')
     }    
+    else{
+        loaderSection.classList.add('d-none');
+    }
 }
