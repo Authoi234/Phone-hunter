@@ -9,7 +9,7 @@ const displayPhones = phones => {
     const phoneContainer = document.getElementById('phone-container')
     phoneContainer.innerHTML = ''
     // display 10 phones only
-    phones.slice(0, 10)
+    phones = phones.slice(0, 10)
 
     // dispaly no phones found
     const noPhone = document.getElementById('no-found-message')
@@ -34,13 +34,14 @@ const displayPhones = phones => {
         </div>
         `
         phoneContainer.appendChild(phoneDiv)
-        // stop loader
+        // stop spinner or loader
+
     })
 }
 
 document.getElementById('btn-search').addEventListener('click', function(){
     // start loader
-    toggleSpinner(true)
+    toggleSpinner(true);
     const searchField = document.getElementById('search-field')
     const searchText = searchField.value
     loadPhones(searchText)
@@ -49,7 +50,7 @@ document.getElementById('btn-search').addEventListener('click', function(){
 
 const toggleSpinner = isLoading => {
     const loaderSection = document.getElementById('loader')
-    if(isLoading){
+    if (isLoading) {
         loaderSection.classList.remove('d-none')
-    }
+    }    
 }
