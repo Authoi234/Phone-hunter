@@ -8,8 +8,8 @@ const loadPhones = async(searchText) => {
 const displayPhones = phones => {
     const phoneContainer = document.getElementById('phone-container')
     phoneContainer.innerHTML = ''
-    // display 20 phones only
-    phones.slice(0, 20)
+    // display 10 phones only
+    phones.slice(0, 10)
 
     // dispaly no phones found
     const noPhone = document.getElementById('no-found-message')
@@ -40,8 +40,16 @@ const displayPhones = phones => {
 
 document.getElementById('btn-search').addEventListener('click', function(){
     // start loader
+    toggleSpinner(true)
     const searchField = document.getElementById('search-field')
     const searchText = searchField.value
     loadPhones(searchText)
     searchField.value = ''
 })
+
+const toggleSpinner = isLoading => {
+    const loaderSection = document.getElementById('loader')
+    if(isLoading){
+        loaderSection.classList.remove('d-none')
+    }
+}
