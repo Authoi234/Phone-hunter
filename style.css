@@ -1,24 +1,50 @@
-
-.containerInCss{
-    border-top: 1px solid black;
-}
 @keyframes rounding{
     0%{
         transform: rotate(0deg);
-        box-shadow: 0 0 5px 2px rgb(105, 105, 234);
+        box-shadow: 0 0 5px 2px rgb(0, 0, 255);
+    }
+    25%{
+        transform: rotate(90deg);
+        box-shadow: 0 0 5px 2px rgb(255, 230, 0);
     }
     50%{
         transform: rotate(180deg);
         box-shadow: 0 0 5px 2px rgb(255, 57, 57);
+    }
+    75%{
+        transform: rotate(270deg);
+        box-shadow: 0 0 5px 2px rgb(255, 0, 255);
     }
     100%{
         transform: rotate(360deg);
         box-shadow: 0 0 5px 2px rgb(97, 208, 28);
     }
 }
+@keyframes multicolor{
+    0%{
+        background: linear-gradient(yellow, red, orange);
+    }
+    25%{
+        background: linear-gradient(slateblue, aquamarine, indianred);
+    }
+    50%{
+        background: linear-gradient(rgb(170, 131, 59), cyan, blue);
+    }
+    75%{
+        background: linear-gradient(whitesmoke, cyan, salmon);
+    }
+    100%{
+        background: linear-gradient(lime, goldenrod, rgb(248, 20, 172));
+    }
+}
 .ring{
+    background-color: indianred;
     position: absolute;
-    animation: rounding 0.9s linear infinite;
+    animation: rounding 1s linear infinite;
     border-radius: 50%;
     height: 200px;
+}
+.btn-color{
+    animation: multicolor 1s linear infinite;
+    color: white;
 }
