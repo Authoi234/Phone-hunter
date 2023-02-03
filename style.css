@@ -37,14 +37,40 @@
         background: linear-gradient(lime, goldenrod, rgb(248, 20, 172));
     }
 }
+@keyframes inputShadow{
+    0%{
+        box-shadow: 0 0 5px 2px yellow;
+    }
+    16.6666666667%{
+        box-shadow: 0 0 5px 2px blue;
+    }
+    33.3333333334%{
+        box-shadow: 0 0 5px 2px red;
+    }
+    50.0000000001%{
+        box-shadow: 0 0 5px 2px rgb(230, 98, 168);
+    }
+    66.6666666668%{
+        box-shadow: 0 0 5px 2px green;
+    }
+    83.3333333335%{
+        box-shadow: 0 0 5px 2px salmon;
+    }
+    100%{
+        box-shadow: 0 0 5px 2px rebeccapurple;
+    }
+}
 .ring{
     background-color: indianred;
     position: absolute;
-    animation: rounding 1s linear infinite;
+    animation: rounding 1s ease infinite;
     border-radius: 50%;
     height: 200px;
 }
 .btn-color{
     animation: multicolor 1s linear infinite;
     color: white;
+}
+.input-color{
+    animation: inputShadow 2s linear infinite;
 }

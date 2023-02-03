@@ -14,7 +14,7 @@ const displayPhones = (phones, dataLimit) => {
         phones = phones.slice(0, 10)
         setTimeout(() => {
             showAll.classList.remove('d-none')
-        }, 3000)
+        }, 4000)
     }
     else {
         showAll.classList.add('d-none')
@@ -43,7 +43,7 @@ const displayPhones = (phones, dataLimit) => {
                 <h5 class="card-title">${phone.phone_name}</h5>
                 <p class="card-text">This is a longer card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit longer.</p>
-                <button onclick="loadPhoneDetails('${phone.slug}')" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#phoneDetailModal">Show Details</button>
+                <button class="btn-color rounded-3 px-3 py-1" onclick="loadPhoneDetails('${phone.slug}')" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#phoneDetailModal">Show Details</button>
             </div>
         </div>
         `
